@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/37ec368270.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1 class="logo"><span>P</span>ortfolio</h1>
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+    <div class="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="https://repository-images.githubusercontent.com/338739812/0271f2ea-0c45-4070-8a5c-87a76504154b">
+                    <div class="layer">
+                        <h2>Hosipital Management System</h2>
+                        <p>Created webpages which gives user the relevant information about the hosipital and can get
+                            appointments.This Project based on front end and back end technologies(HTML,CSS,PHP,UI/UX)</p>
+                            <a href="https://github.com/Navya7sri/HOSPITAL-MANAGEMENT-SYSTEM"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://i.pinimg.com/736x/a7/3c/bf/a73cbfbcf18054bf31ee42e6453c5d94.jpg">
+                    <div class="layer">
+                        <h2>South India Tourism</h2>
+                        <p>Developed a command line project which allows user to choose their desired tourist places to visit.Programming language Java is used</p>
+                            <a href="https://github.com/Navya7sri/SouthIndia-Tourism"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    
+    
+</body>
+</html>

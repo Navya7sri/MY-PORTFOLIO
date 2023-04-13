@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/37ec368270.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1 class="logo"><span>P</span>ortfolio</h1>
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>navya7vallakati@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>8074722516</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/navyasri-vallakati-698708251/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Navya7sri"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="final navya resume.pdf" class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" placeholder="Your Name" id="name">
+                        <input type="text" placeholder="Your Email" id="email">
+                        <textarea id="msg" cols="30" rows="10" placeholder="Drop Your Message"></textarea>
+                        <button type="submit" class="btn btn2" onclick="message()">Submit</button>
+                        <div class="message">
+                            <div class="success" id="success">Your Message Successfully Sent!</div>
+                            <div class="danger" id="danger">Feilds can't be empty!</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyrjCahuNj3AL3qXcAkjHcP72aqwdQvBATr2RhfD9fQLbkE4Eh5fdAcSEPi-yB5hZmy/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    <script>
+        function message(){
+    var Name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var msg = document.getElementById('msg');
+    const success = document.getElementById('success');
+    const danger = document.getElementById('danger');
+
+    if(Name.value === '' || email.value === '' || msg.value === ''){
+        danger.style.display = 'block';
+    }
+    else{
+        setTimeout(() => {
+            Name.value = '';
+            email.value = '';
+            msg.value = '';
+        }, 2000);
+
+        success.style.display = 'block';
+    }
+
+
+    setTimeout(() => {
+        danger.style.display = 'none';
+        success.style.display = 'none';
+    }, 4000);
+
+}
+    </script>
+
+    
+</body>
+</html>

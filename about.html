@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/37ec368270.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1 class="logo"><span>P</span>ortfolio</h1>
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div> 
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="https://previews.123rf.com/images/sean824/sean8241508/sean824150800403/44299297-about-me.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me</h2>
+                    <br>
+                    <p class="p">My name is Navyasri and I'm from Jaggayapet. I'm currently pursuing my Btech 2nd year in Artificial Intelligence and Data Science at Velgapudi Ramakrishna Siddhartha engineering college.My father's name is Srinivasa Rao he is an employee and my mother's name is Parvathi she is a homemaker. My Ambition is to get a good job in a Reputed company.Coming with my technical skills, I have learnt C ,C++,python, java.My hobbies are reading and writing.</p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li>• Leadership skills</li>
+                            <li>• Managerial & Organizing skills</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>B-Tech in Artificial Intelligence & Data Science</span>(2021-2025)<br>Velgapudi Ramakrishna Siddhartha Engineering College<br>Marks Secured : 9.19</li>
+                            <li><span>Intermediate - MPC</span>(2019-2021)<br>Jaggayapet Junior College<br>Marks Secured : 988</li>
+                            <li><span>SSC</span>(2019)<br>Narayana English Medium School<br>CGPA : 10.0</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    
+</body>
+</html>
